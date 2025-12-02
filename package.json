@@ -1,6 +1,8 @@
 {
   "name": "skor-web-core-components",
   "version": "1.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
