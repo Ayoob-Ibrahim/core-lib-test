@@ -1,1 +1,9 @@
-<p>app-text works!</p>
+<div [ngClass]="textClass" [ngStyle]="{ color: textColor }" [style.fontSize]="fontSize">
+  <ng-container *ngIf="!htmlContent; else htmlTemplate">
+    <ng-content></ng-content>
+  </ng-container>
+
+  <ng-template #htmlTemplate>
+    <div [innerHTML]="htmlContent"></div>
+  </ng-template>
+</div>
