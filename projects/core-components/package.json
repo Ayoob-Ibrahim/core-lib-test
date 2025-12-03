@@ -1,6 +1,6 @@
 {
-  "name": "core-components",
-  "version": "1.0.4",
+  "name": "skor-web-core-components",
+  "version": "1.0.5",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
