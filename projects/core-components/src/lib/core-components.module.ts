@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AppTextComponent } from 'core-components';
+import { AppTextComponent } from '../lib/app-text/app-text.component';
 
 @NgModule({
   declarations: [AppTextComponent],
