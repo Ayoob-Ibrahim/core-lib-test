@@ -11,23 +11,23 @@
     "analytics": false
   },
   "projects": {
-    "core-components": {
+    "skor-web-core-components": {
       "projectType": "library",
-      "root": "projects/core-components",
-      "sourceRoot": "projects/core-components/src",
-      "prefix": "skor",
+      "root": "projects/skor-web-core-components",
+      "sourceRoot": "projects/skor-web-core-components/src",
+      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/core-components/ng-package.json"
+            "project": "projects/skor-web-core-components/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/core-components/tsconfig.lib.prod.json"
+              "tsConfig": "projects/skor-web-core-components/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/core-components/tsconfig.lib.json"
+              "tsConfig": "projects/skor-web-core-components/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -35,7 +35,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/core-components/tsconfig.spec.json",
+            "tsConfig": "projects/skor-web-core-components/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

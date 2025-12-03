@@ -7,6 +7,9 @@
       "core-components": [
         "dist/core-components",
         "./dist/core-components"
+      ],
+      "skor-web-core-components": [
+        "./dist/skor-web-core-components"
       ]
     },
     "outDir": "./dist/out-tsc",
