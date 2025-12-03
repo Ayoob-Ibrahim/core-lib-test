@@ -1,12 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AppTextComponent } from './app-text/app-text.component';
-
-const components = [AppTextComponent];
+import { AppTextComponent } from 'core-components';
 
 @NgModule({
-  declarations: [...components],
+  declarations: [AppTextComponent],
   imports: [CommonModule],
-  exports: [...components],
+  exports: [AppTextComponent],
 })
 export class CoreComponentsModule {}

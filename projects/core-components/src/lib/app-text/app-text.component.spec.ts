@@ -6,10 +6,12 @@ describe('AppTextComponent', () => {
   let component: AppTextComponent;
   let fixture: ComponentFixture<AppTextComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [AppTextComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppTextComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(AppTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
