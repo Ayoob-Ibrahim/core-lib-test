@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "private": true,
   "scripts": {
-    "build:core": "ng build @rwdz/core",
+    "build:core": "ng build @rwdz/core && dist/rwdz/core && pnpm publish",
     "pack:core": "ng build @rwdz/core && npm pack dist/rwdz/core"
   },
   "peerDependencies": {
