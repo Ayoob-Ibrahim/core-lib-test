@@ -1,0 +1,35 @@
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <app-icon
+    *ngIf="!(preview || photo)"
+    iconName="account_circle"
+    [size]="140"
+    color="#ccc"
+  />
+
+  <img
+    *ngIf="preview || photo"
+    [src]="preview || photo"
+    class="profile-photo mb-4"
+  />
+
+  <app-button
+    *ngIf="label"
+    type="basic"
+    [icon]="iconName"
+    [text]="label"
+    (click)="triggerPhotoInput()"
+  />
+
+  <input
+    #photoInput
+    id="photoInput"
+    type="file"
+    (change)="onPhotoSelected($event)"
+    [attr.accept]="accept"
+    hidden
+  />
+
+  <app-text *ngIf="hint" type="label" class="mt-2">
+    {{ hint }}
+  </app-text>
+</div>

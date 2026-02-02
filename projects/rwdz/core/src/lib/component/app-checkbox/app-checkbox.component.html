@@ -1,0 +1,23 @@
+<ng-container *ngIf="showCheckbox; else labelOnly">
+  <mat-checkbox [ngClass]="labelBold ? 'fw-bold':''" [formControl]="control" (change)="onChange($event)">
+    {{ label }}
+  </mat-checkbox>
+  <mat-error *ngIf="control.touched && control.hasError('required') && showErrorAlert">
+    {{ label }} {{'isRequired' | translate}}
+  </mat-error>
+</ng-container>
+
+<ng-template #labelOnly>
+  <div class="d-flex justify-content-start">
+    <div class="app-tabs">
+      <mat-checkbox
+        [formControl]="control"
+        class="app-tab hidden-box"
+        (change)="onChange($event)"
+        [ngClass]="label.checked ? 'active' : ''"
+      >
+        {{ label.label | translate }}
+      </mat-checkbox>
+    </div>
+  </div>
+</ng-template>

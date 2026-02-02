@@ -1,0 +1,9 @@
+<div class="image-container">
+  <img
+    [src]="src || defaultImage"
+    [attr.height]="height"
+    [attr.width]="width"
+    [ngClass]="ngClass"
+    (click)="handleClick()"
+  />
+</div>

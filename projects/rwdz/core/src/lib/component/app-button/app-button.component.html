@@ -1,0 +1,136 @@
+<button
+  *ngIf="type === 'raised'"
+  mat-raised-button
+  [ngClass]="colorClass"
+  [ngStyle]="customStyles"
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <div class="button-content">
+    <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+    <mat-icon class="icon-spinner" *ngIf="!loading && icon">
+      {{ icon }}
+    </mat-icon>
+    {{ text }}
+  </div>
+</button>
+
+<button
+  *ngIf="type === 'outline'"
+  mat-stroked-button
+  [ngClass]="colorClass"
+  [ngStyle]="customStyles"
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <div class="button-content">
+    <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+    <mat-icon class="icon-spinner" *ngIf="!loading && icon">
+      {{ icon }}
+    </mat-icon>
+    {{ text }}
+  </div>
+</button>
+<button
+  *ngIf="type === 'flat'"
+  mat-flat-button
+  [ngClass]="colorClass"
+  [ngStyle]="customStyles"
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <div class="button-content">
+    <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+    <mat-icon class="icon-spinner" *ngIf="!loading && icon">
+      {{ icon }}
+    </mat-icon>
+    {{ text }}
+  </div>
+</button>
+
+<button
+  *ngIf="type === '' && !redirectUrl"
+  mat-button
+  [ngClass]="colorClass"
+  [ngStyle]="customStyles"
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <div class="button-content">
+    <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+    <mat-icon class="icon-spinner m-0" *ngIf="!loading && icon">
+      {{ icon }}
+    </mat-icon>
+    {{ text }}
+  </div>
+</button>
+
+<a
+  *ngIf="type === '' && redirectUrl"
+  mat-button
+  [ngClass]="colorClass"
+  [ngStyle]="customStyles"
+  [href]="redirectUrl"
+>
+  <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+  {{ text }}
+</a>
+
+<button
+  *ngIf="type === 'basic'"
+  mat-button
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <div class="button-content">
+    <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+    <mat-icon class="icon-spinner" *ngIf="!loading && icon">
+      {{ icon }}
+    </mat-icon>
+    {{ text }}
+  </div>
+</button>
+
+<button
+  *ngIf="type === 'icon'"
+  mat-icon-button
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+  <mat-icon class="icon-spinner" *ngIf="!loading && icon">
+    {{ icon }}
+  </mat-icon>
+</button>
+
+<button
+  *ngIf="type === 'fab'"
+  mat-fab
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+  <mat-icon class="icon-spinner" *ngIf="!loading && icon">
+    {{ icon }}
+  </mat-icon>
+</button>
+
+<button
+  *ngIf="type === 'mini-fab'"
+  mat-mini-fab
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="eventType"
+>
+  <app-spinner class="icon-spinner" *ngIf="loading"></app-spinner>
+  <mat-icon class="icon-spinner" *ngIf="!loading && icon">
+    {{ icon }}
+  </mat-icon>
+</button>

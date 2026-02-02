@@ -1,0 +1,13 @@
+/* Position the custom loading spinner to the right */
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevents interference with clicking */
+}
+
+mat-spinner {
+  width: 18px;
+  height: 18px;
+}

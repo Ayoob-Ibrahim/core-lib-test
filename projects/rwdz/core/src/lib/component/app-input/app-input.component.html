@@ -1,0 +1,30 @@
+<mat-form-field appearance="outline">
+  <mat-icon *ngIf="prefixIcon" matPrefix>{{ prefixIcon }}</mat-icon>
+  <mat-icon *ngIf="suffixIcon" matSuffix (click)="onClickSuffix()">
+    {{ suffixIcon }}
+  </mat-icon>
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+  <input
+    matInput
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="control"
+  />
+  <mat-hint *ngIf="hintStart" align="start">
+    {{ hintStart }}
+  </mat-hint>
+  <mat-hint *ngIf="hintEnd" align="end">
+    {{ hintEnd }}
+  </mat-hint>
+
+  <mat-error *ngIf="control.touched && control.hasError('required')">
+    {{ label || placeholder }} {{ "isRequired" | translate }}
+  </mat-error>
+  <mat-error *ngIf="control.touched && control.hasError('pattern')">
+    <!-- TODO: update to Language -->
+    Invalid Input
+  </mat-error>
+  <mat-error *ngIf="control.touched && control.hasError('email')">
+    {{ "emailRequired" | translate }}
+  </mat-error>
+</mat-form-field>

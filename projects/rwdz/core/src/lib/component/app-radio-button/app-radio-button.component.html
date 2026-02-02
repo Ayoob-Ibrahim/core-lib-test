@@ -1,0 +1,18 @@
+<ng-container *ngIf="!multi">
+  <mat-radio-button
+    [attr.name]="label"
+    [attr.value]="value"
+    [checked]="defaultSelected === value"
+    (change)="onSelectionChange($event)"
+  >
+    {{ label }}
+  </mat-radio-button>
+</ng-container>
+
+<ng-container *ngIf="multi">
+  <mat-radio-group (change)="onSelectionChange($event)" [ngClass]="classes" [formControl]="control">
+    <mat-radio-button *ngFor="let option of optionsList" [value]="option.value">
+      {{ option.label }}
+    </mat-radio-button>
+  </mat-radio-group>
+</ng-container>

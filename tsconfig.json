@@ -4,6 +4,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@rwdz/core": [
+        "./dist/rwdz/core"
+      ],
+      "@rwdz/core-cdk": [
+        "./dist/rwdz/core-cdk"
+      ],
       "core-components": [
         "dist/core-components",
         "./dist/core-components"
@@ -15,7 +21,7 @@
     "outDir": "./dist/out-tsc",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

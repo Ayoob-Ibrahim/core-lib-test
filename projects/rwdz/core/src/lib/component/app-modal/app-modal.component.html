@@ -1,0 +1,29 @@
+<div class="top-box" *ngIf="isTopBox"></div>
+<div class="dialog-wrapper" [ngClass]="{ 'top-position': isTopBox }">
+  <div class="mx-4 my-2">
+    <div class="d-flex justify-content-between">
+      <app-text
+        *ngIf="title"
+        type="headline"
+        size="medium"
+        [ngClass]="{ ' white-color': isTopBox }"
+      >
+        {{ title }}
+      </app-text>
+      <app-icon
+        class="close-button"
+        matDialogClose
+        (click)="(closeButton)"
+        iconName="close"
+      />
+    </div>
+  </div>
+  <div class="dialog-content" mat-dialog-content>
+    <div class="content-container">
+      <ng-content select="[dialog-content]"></ng-content>
+    </div>
+  </div>
+  <div class="dialog-actions" mat-dialog-actions>
+    <ng-content select="[dialog-actions]"></ng-content>
+  </div>
+</div>

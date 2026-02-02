@@ -1,0 +1,53 @@
+<mat-form-field appearance="outline">
+  <mat-label *ngIf="showLabel">{{ label }}</mat-label>
+  <mat-select
+    [placeholder]="label"
+    [formControl]="control"
+    [compareWith]="compareOptions"
+    (selectionChange)="onChangeSelection($event)"
+    [ngClass]="loading ? 'select-list-loading' : ''"
+  >
+    <!-- (closed)="resetSearch()" -->
+    <div *ngIf="showAddBtn" class="row g-0 px-2 mb-2">
+      <app-button
+        class="col-12"
+        [customStyles]="customStyles"
+        type="flat"
+        [icon]="btnIcon"
+        [text]="addBtnDetails.text"
+        (clicked)="onAddBtnClicked()"
+      ></app-button>
+    </div>
+    <div *ngIf="showSearchBox" class="row g-0 px-2">
+      <app-search
+        class="col-12 mb-2"
+        [searchKey]="searchQuery"
+        [searchLabel]="searchLabel"
+        (search)="updateSearchQuery($event)"
+      ></app-search>
+    </div>
+    <mat-option *ngFor="let option of optionsList" [value]="option">
+      {{ getOption(option) }}
+    </mat-option>
+    <mat-option
+      *ngIf="!!optionsList && optionsList.length === 0"
+      [disabled]="true"
+    >
+      {{ noOptions }}
+    </mat-option>
+  </mat-select>
+  <ng-container *ngIf="loading">
+    <div matSuffix class="loading-spinner">
+      <mat-spinner diameter="18"></mat-spinner>
+    </div>
+  </ng-container>
+  <mat-hint *ngIf="hintStart" align="start">
+    {{ hintStart }}
+  </mat-hint>
+  <mat-hint *ngIf="hintEnd" align="end">
+    {{ hintEnd }}
+  </mat-hint>
+  <mat-error *ngIf="control.touched && control.hasError('required')">
+    {{ label }} - {{ "required" | translate }}
+  </mat-error>
+</mat-form-field>
