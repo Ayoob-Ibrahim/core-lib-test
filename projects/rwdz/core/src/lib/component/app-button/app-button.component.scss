@@ -1,28 +1,29 @@
-// @use "src/assets/scss/variables.scss" as *;
+.action-button {
+  height: 48px;
+}
 
-// .action-button {
-//   height: 48px;
-// }
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-// .button-content {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   .icon-spinner {
-//     margin-right: 8px;
-//   }
-// }
+  .icon-spinner {
+    margin-right: 8px;
+  }
+}
 
-// ::ng-deep .mdc-button.mat-primary {
-//   .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
-//   .mat-mdc-progress-spinner
-//     .mdc-circular-progress__indeterminate-circle-graphic {
-//     stroke: $white-color !important;
-//   }
-// }
+/* Spinner color override for primary buttons */
+::ng-deep .mdc-button.mat-primary {
+  .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+  .mat-mdc-progress-spinner
+    .mdc-circular-progress__indeterminate-circle-graphic {
+    stroke: var(--rwdz-color-white) !important;
+  }
+}
 
-// button.mdc-button.mat-white {
-//   background-color: $white-color;
-//   color: $primary-color;
-//   border: 1px solid $border-color;
-// }
+/* White variant button */
+button.mdc-button.mat-white {
+  background-color: var(--rwdz-color-white);
+  color: var(--rwdz-color-primary);
+  border: 1px solid var(--rwdz-color-border);
+}

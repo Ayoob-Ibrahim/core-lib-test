@@ -1,12 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
-
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-input',
   templateUrl: './app-input.component.html',
   styleUrl: './app-input.component.scss',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    TranslateModule,ReactiveFormsModule
+  ],
 })
 export class AppInputComponent {
   @Input() label!: string;

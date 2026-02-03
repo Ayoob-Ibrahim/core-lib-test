@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-spinner',
   templateUrl: './app-spinner.component.html',
   styleUrl: './app-spinner.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule,MatProgressSpinnerModule],
 })
 export class AppSpinnerComponent {
   @Input() mode: 'determinate' | 'indeterminate' = 'indeterminate';

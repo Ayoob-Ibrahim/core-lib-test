@@ -9,14 +9,20 @@ import {
 import { MatSelect } from '@angular/material/select';
 import { TranslateService } from '@ngx-translate/core';
 import { debounceTime, Subject } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
+import { AppButtonComponent } from '../app-button/app-button.component';
+import { AppSearchComponent } from '../app-search/app-search.component';
 @Component({
   selector: 'app-select',
   templateUrl: './app-select.component.html',
   styleUrl: './app-select.component.scss',
-  imports: [CommonModule],
+  imports:[CommonModule,ReactiveFormsModule,MatFormFieldModule,MatSelectModule,MatIconModule,MatProgressSpinnerModule,TranslateModule,AppButtonComponent,AppSearchComponent],
 })
 export class AppSelectComponent {
   @Input() label: string = '';
@@ -73,20 +79,27 @@ export class AppSelectComponent {
   }
 
   originalList: any[] = [];
-  updateSearchQuery(query: string) {
-    if (this.dynamicOptions) {
-      this.searchKey?.emit(query);
-    } else {
-      if (this.originalList.length === 0) {
-        this.originalList = this.optionsList;
-      }
-      this.optionsList = this.originalList.filter((option) => {
-        return this.getOption(option)
-          .toLowerCase()
-          .includes(query.toLowerCase());
-      });
+  updateSearchQuery(query: string | Event) {
+  const searchValue =
+    typeof query === 'string'
+      ? query
+      : (query.target as HTMLInputElement)?.value || '';
+
+  if (this.dynamicOptions) {
+    this.searchKey?.emit(searchValue);
+  } else {
+    if (this.originalList.length === 0) {
+      this.originalList = this.optionsList;
     }
+
+    this.optionsList = this.originalList.filter(option =>
+      this.getOption(option)
+        .toLowerCase()
+        .includes(searchValue.toLowerCase())
+    );
   }
+}
+
 
   onChangeSelection(event: any) {
     this.onOptionSelect.emit(event.value);

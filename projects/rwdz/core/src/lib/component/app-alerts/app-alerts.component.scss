@@ -1,61 +1,65 @@
-// @use "src/assets/scss/variables.scss" as *;
+.alerts-container {
+  .alert-container {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 3rem);
+    position: fixed;
+    z-index: 9999;
+    left: 1rem;
+    right: 2rem;
+    bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: var(--rwdz-border-radius);
+    background-color: var(--rwdz-color-white);
+    border: 1px solid var(--rwdz-color-info);
+    color: var(--rwdz-color-info);
 
-// .alerts-container {
-//   .alert-container {
-//     display: flex;
-//     align-items: center;
-//     width: calc(100% - 3rem);
-//     position: fixed;
-//     z-index: 9999;
-//     left: 1rem;
-//     right: 2rem;
-//     bottom: 1rem;
-//     padding: 0.5rem;
-//     border-radius: 0.5rem;
-//     background-color: #fff;
-//     border: 1px solid var(--info-color);
-//     color: var(--info-color);
+    &:hover {
+      z-index: 99999;
+    }
 
-//     &:hover {
-//       z-index: 99999;
-//     }
+    &.alert-success {
+      border-color: var(--rwdz-color-success);
+      color: var(--rwdz-color-success);
+    }
 
-//     &.alert-success {
-//       border-color: var(--success-color);
-//       color: var(--success-color);
-//     }
-//     &.alert-warning {
-//       border-color: var(--warning-color);
-//       color: var(--warning-color);
-//     }
-//     &.alert-error {
-//       border-color: var(--error-color);
-//       color: var(--error-color);
-//     }
+    &.alert-warning {
+      border-color: var(--rwdz-color-warning);
+      color: var(--rwdz-color-warning);
+    }
 
-//     .alert-icon {
-//       margin-right: 1rem;
-//       color: inherit;
-//       height: 2rem;
-//       .mat-icon {
-//         font-size: 2rem;
-//         height: 2rem;
-//         width: 2rem;
-//       }
-//     }
-//     .alert-message {
-//       flex: 1;
-//       flex-grow: 1;
-//       color: inherit;
-//     }
-//     button {
-//       border: none;
-//       background-color: $white-color;
-//     }
-//     .alert-close {
-//       cursor: pointer;
-//       margin-left: 1rem;
-//       color: inherit;
-//     }
-//   }
-// }
+    &.alert-error {
+      border-color: var(--rwdz-color-error);
+      color: var(--rwdz-color-error);
+    }
+
+    .alert-icon {
+      margin-right: 1rem;
+      color: inherit;
+      height: 2rem;
+
+      .mat-icon {
+        font-size: 2rem;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .alert-message {
+      flex: 1;
+      flex-grow: 1;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background-color: var(--rwdz-color-white);
+    }
+
+    .alert-close {
+      cursor: pointer;
+      margin-left: 1rem;
+      color: inherit;
+    }
+  }
+}

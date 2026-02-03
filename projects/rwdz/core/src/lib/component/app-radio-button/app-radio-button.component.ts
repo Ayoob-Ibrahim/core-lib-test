@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
+import { MatRadioModule } from '@angular/material/radio';
 @Component({
   selector: 'app-radio-button',
   templateUrl: './app-radio-button.component.html',
   styleUrl: './app-radio-button.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule,
+    MatRadioModule],
 })
 export class AppRadioButtonComponent {
   @Input() control!: FormControl;
@@ -18,7 +20,7 @@ export class AppRadioButtonComponent {
   @Input() classes: string = '';
 
   @Output() changed = new EventEmitter<boolean>();
-  constructor() {}
+  constructor() { }
 
   onSelectionChange(event: any) {
     this.changed.emit(event);

@@ -6,12 +6,12 @@ import { removeAlert } from '../../store/alerts/alerts.actions';
 import { Alert } from '../../store/alerts/alerts.interface';
 import { selectAlerts } from '../../store/alerts/alerts.selector';
 import { CommonModule } from '@angular/common';
-
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-alerts',
   templateUrl: './app-alerts.component.html',
   styleUrl: './app-alerts.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule,MatIconModule],
 })
 export class AppAlertsComponent {
   alerts$: Observable<Alert[]>;

@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TooltipPosition } from '@angular/material/tooltip';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-icon',
   templateUrl: './app-icon.component.html',
   styleUrl: './app-icon.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule,MatIconModule,MatTooltipModule],
 })
 export class AppIconComponent {
   @Input() iconName: string = '';

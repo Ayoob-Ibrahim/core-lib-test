@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, Inject, Input } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { AppIconComponent } from '../app-icon/app-icon.component';
+import { AppTextComponent } from '../app-text/app-text.component';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './app-modal.component.html',
   styleUrl: './app-modal.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule,AppIconComponent,AppTextComponent],
 })
 export class AppModalComponent {
   @Input() title: string = '';

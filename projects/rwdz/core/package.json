@@ -2,7 +2,7 @@
   "name": "@rwdz/core",
   "version": "0.0.1",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com" 
   },
   "peerDependencies": {
     "@angular/common": "^19.2.0",

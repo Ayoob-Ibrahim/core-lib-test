@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-
+import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-card',
   templateUrl: './app-card.component.html',
   styleUrl: './app-card.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule,MatCardModule],
 })
 export class AppCardComponent {
   @Input() hasHeader: boolean = false;

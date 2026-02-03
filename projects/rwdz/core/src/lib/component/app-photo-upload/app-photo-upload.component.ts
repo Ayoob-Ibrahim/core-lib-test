@@ -8,12 +8,15 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { AppIconComponent } from '../app-icon/app-icon.component';
+import { AppTextComponent } from '../app-text/app-text.component';
+import { AppButtonComponent } from '../app-button/app-button.component';
 
 @Component({
   selector: 'app-photo-upload',
   templateUrl: './app-photo-upload.component.html',
   styleUrl: './app-photo-upload.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule,AppIconComponent,AppTextComponent,AppButtonComponent]
 })
 export class AppPhotoUploadComponent {
   @ViewChild('photoInput') photoInput!: ElementRef;

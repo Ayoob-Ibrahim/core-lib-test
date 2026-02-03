@@ -1,6 +1,7 @@
 .cursor-pointer {
   cursor: pointer;
+
   &:hover {
-    color: var(--primary-color);
+    color: var(--rwdz-color-primary);
   }
 }

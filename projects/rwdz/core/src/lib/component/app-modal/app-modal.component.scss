@@ -1,38 +1,40 @@
-// @use "src/assets/scss/variables.scss" as *;
+.dialog-wrapper {
+  width: 80vw;
+  max-width: 100%;
+}
 
-// .dialog-wrapper {
-//   width: 80vw;
-//   max-width: 100%;
-// }
-// .dialog-content {
-//   padding-top: 0;
-//   max-height: calc(90vh - 150px);
-//   .content-container {
-//     height: 100%;
-//     overflow-y: auto;
-//   }
-// }
-// .dialog-actions {
-//   padding-top: 0;
-// }
-// .close-button {
-//   background-color: $white-color;
-//   border-radius: 0.5rem;
-//   padding: 0.35rem;
-//   height: 2.2rem;
-// }
+.dialog-content {
+  padding-top: 0;
+  max-height: calc(90vh - 150px);
 
-// .top-position {
-//   position: relative;
-//   top: -150px;
-//   margin-bottom: -150px;
-// }
+  .content-container {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
 
-// .white-color {
-//   color: $white-color;
-// }
+.dialog-actions {
+  padding-top: 0;
+}
 
-// .top-box {
-//   height: 10rem;
-//   background-color: var(--primary-color);
-// }
+.close-button {
+  background-color: var(--rwdz-color-white);
+  border-radius: var(--rwdz-border-radius);
+  padding: 0.35rem;
+  height: 2.2rem;
+}
+
+.top-position {
+  position: relative;
+  top: -150px;
+  margin-bottom: -150px;
+}
+
+.white-color {
+  color: var(--rwdz-color-white);
+}
+
+.top-box {
+  height: 10rem;
+  background-color: var(--rwdz-color-primary);
+}

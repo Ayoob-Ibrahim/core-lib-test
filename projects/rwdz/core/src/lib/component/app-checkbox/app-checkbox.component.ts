@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
-
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'app-checkbox',
   templateUrl: './app-checkbox.component.html',
   styleUrl: './app-checkbox.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule, ReactiveFormsModule, MatFormFieldModule,],
 })
 export class AppCheckboxComponent {
   @Input() control!: FormControl;
@@ -16,8 +16,8 @@ export class AppCheckboxComponent {
   @Input() showCheckbox?: boolean = true;
   @Input() showErrorAlert?: boolean = true;
 
-  @Output() changed:EventEmitter<boolean> = new EventEmitter<boolean>();
-  constructor(private translate: TranslateService) {}
+  @Output() changed: EventEmitter<boolean> = new EventEmitter<boolean>();
+  constructor(private translate: TranslateService) { }
 
   onChange(event: any) {
     if (this.showCheckbox) {
