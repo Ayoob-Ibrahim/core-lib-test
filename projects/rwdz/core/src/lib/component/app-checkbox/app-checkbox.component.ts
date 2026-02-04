@@ -3,11 +3,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @Component({
   selector: 'app-checkbox',
   templateUrl: './app-checkbox.component.html',
   styleUrl: './app-checkbox.component.scss',
-  imports: [CommonModule, TranslateModule, ReactiveFormsModule, MatFormFieldModule,],
+  imports: [CommonModule, TranslateModule, ReactiveFormsModule,MatCheckboxModule, MatFormFieldModule,],
 })
 export class AppCheckboxComponent {
   @Input() control!: FormControl;
