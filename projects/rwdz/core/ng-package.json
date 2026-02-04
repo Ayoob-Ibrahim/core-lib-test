@@ -3,11 +3,13 @@
   "dest": "../../../dist/rwdz/core",
   "lib": {
     "entryFile": "src/public-api.ts",
-    "styleIncludePaths": ["src/theme"]
+    "styleIncludePaths": [
+      "./src/theme"
+    ]
   },
   "assets": [
     {
-      "input": "theme",
+      "input": "./src/theme",
       "glob": "**/*.scss",
       "output": "theme"
     }

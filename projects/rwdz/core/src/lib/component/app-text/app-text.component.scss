@@ -1,1 +1,27 @@
- 
+ .font-bold {
+  font-weight: 700 !important;
+}
+
+/* Headline Large */
+.mat-headline-large {
+  font-weight: 700 !important;
+  font-family: var(--rwdz-font-family) !important;
+  font: var(--mat-sys-headline-large);
+  margin-bottom: 0.25rem;
+}
+
+/* Headline Medium */
+.mat-headline-medium {
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-family: var(--rwdz-font-family);
+  margin: 0 0 0.5em;
+}
+
+/* Label Large */
+.mat-label-large,
+.mat-typography .mat-label-large {
+  font: var(--mat-sys-label-large);
+  letter-spacing: 0.006rem;
+  font-family: var(--rwdz-font-family) !important;
+}

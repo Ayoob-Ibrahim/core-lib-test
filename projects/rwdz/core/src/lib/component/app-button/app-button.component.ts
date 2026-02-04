@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { AppSpinnerComponent } from '../app-spinner/app-spinner.component';
 @Component({
   selector: 'app-button',
   templateUrl: './app-button.component.html',
   styleUrl: './app-button.component.scss',
-  imports: [CommonModule,MatIconModule,AppSpinnerComponent],
+  imports: [CommonModule, MatIconModule, AppSpinnerComponent],
+  
 })
 export class AppButtonComponent {
   @Input() type:
